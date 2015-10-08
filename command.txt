@@ -1,0 +1,11 @@
+$ export ONOS_ROOT=/home/kane/onos
+$ export KARAF_ROOT=/home/kane/Applications/apache-karaf-3.0.2
+$ export PATH=$ONOS_ROOT:$KARAF_ROOT:$KARAF_ROOT/bin:$PATH
+$ source $ONOS_ROOT/tools/dev/bash_profile
+$ cd ${ONOS_ROOT}
+modify $ONOS_ROOT/apps/pom.xml
+modify $ONOS_ROOT/feature/feature.xml
+$ mvn clean install
+$ karaf clean
+onos>feature:install onos-app-hello
+onos>start onos-app-hello
